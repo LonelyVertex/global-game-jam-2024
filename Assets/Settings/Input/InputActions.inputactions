@@ -1,0 +1,60 @@
+{
+    "name": "InputActions",
+    "maps": [
+        {
+            "name": "Click",
+            "id": "e2a2d2a1-3346-45bc-a68c-d8603b262d88",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "d5afa4f9-364a-4d8a-9f4f-7992fd8ea72b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MousePosition",
+                    "type": "Value",
+                    "id": "c19e7174-fb2c-49a9-9c37-355fd4ff16d5",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "10c62ec1-fa66-4a5e-af11-acb97a79763f",
+                    "path": "<Pointer>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Pointer",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f89d8ed4-c2df-4a88-8e2d-a0ef22faf94e",
+                    "path": "<Pointer>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Pointer",
+            "bindingGroup": "Pointer",
+            "devices": []
+        }
+    ]
+}

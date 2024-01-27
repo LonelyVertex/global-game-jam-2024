@@ -8,12 +8,18 @@ public class WitchScene : GameScene
     [SerializeField] private Transform _witchTarget;
     [SerializeField] private Transform _janekTarget;
     [SerializeField] private Item _potion;
+    [SerializeField] private Item _frog;
 
     protected override void HandleInventoryItemClicked(Item item)
     {
         if (item.itemProperty.name != GameStateProperties.ItemFrog)
         {
             _witch.characterController.Fail();
+
+            if (!gameState.IsStateOn(GameStateProperties.PersonWitchSatisfied))
+            {
+                _witch.hintController.Show(_frog);
+            }
             return;
         }
 

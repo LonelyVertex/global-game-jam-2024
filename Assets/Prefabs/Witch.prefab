@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 6292930742108705900}
   throwingController: {fileID: 8190022673377584915}
+  hintController: {fileID: 8172611133472558885}
 --- !u!114 &6292930742108705900 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2394950886498039736, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
@@ -144,6 +145,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de29c40377ebc45d8a6b68532cbb629b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8172611133472558885 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 505136024670072049, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
+  m_PrefabInstance: {fileID: 8532183908957987796}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165292858721174807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81af2516f54bfa40b7d1e437083b483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &8190022673377584915 stripped

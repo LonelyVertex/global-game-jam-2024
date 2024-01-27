@@ -394,6 +394,7 @@ MonoBehaviour:
   _witchTarget: {fileID: 1000455877}
   _janekTarget: {fileID: 667880276}
   _potion: {fileID: 11400000, guid: 92282ca42a4856748abb71def23e38ca, type: 2}
+  _frog: {fileID: 11400000, guid: 984f48d8104321946aa0fdc64f42e2cb, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

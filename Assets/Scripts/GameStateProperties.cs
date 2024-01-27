@@ -2,9 +2,7 @@ using System.Collections.Generic;
 
 public static class GameStateProperties
 {
-    public const string StateGranHasBeer = "state_gran_has_beer";
-    public const string StateFrogCooked = "state_frog_cooked";
-    public const string StateWellWithoutFrog = "state_well_without_frog";
+    public const string PersonWitchSatisfied = "person_witch_satisfied";
 
     public const string PlaceMap = "place_map";
     public const string PlaceHome = "place_home";
@@ -31,9 +29,6 @@ public static class GameStateProperties
 
     public static readonly List<string> AllProperties = new ()
     {
-        StateGranHasBeer,
-        StateFrogCooked,
-        StateWellWithoutFrog,
 
         PlaceMap,
         PlaceHome,

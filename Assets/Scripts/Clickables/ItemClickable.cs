@@ -15,9 +15,9 @@ public class ItemClickable : Clickable
         _gameState = FindObjectOfType<GameState>();
     }
 
-    public override void Click()
+    public override void Click(Vector2 hitPoint)
     {
-        if (!_item.onClickConditions.All(c => _gameState.IsStateOn(c.stateName)))
+        if (!_item.onClickConditions.All(c => _gameState.IsStateOn(c.name)))
         {
             clickFailedEvent?.Invoke();
 

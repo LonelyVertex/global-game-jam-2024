@@ -7,6 +7,9 @@ public class Item : ScriptableObject
     public Sprite gameSprite;
     public Sprite uiSprite;
 
+    [Header("ID")]
+    public GameStateProperty itemProperty;
+
     [Header("Conditions")]
-    public Condition[] onClickConditions;
+    public GameStateProperty[] onClickConditions;
 }

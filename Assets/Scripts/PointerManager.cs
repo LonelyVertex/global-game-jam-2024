@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,8 @@ public class PointerManager : MonoBehaviour
 
     private InputAction _clickAction;
     private InputAction _mousePosition;
+
+    private RaycastHit2D[] _hits = new RaycastHit2D[2];
 
     protected void OnEnable()
     {
@@ -30,7 +33,17 @@ public class PointerManager : MonoBehaviour
         }
 
         var worldPosition = _camera.ScreenToWorldPoint(_mousePosition.ReadValue<Vector2>());
-        var hit = Physics2D.Raycast(worldPosition, Vector2.zero);
+        var size = Physics2D.RaycastNonAlloc(worldPosition, Vector2.zero, _hits);
+        var maxDepth = float.MinValue;
+        RaycastHit2D hit = default;
+        for (var i = 0; i < size; i++)
+        {
+            if (!(_hits[i].transform.position.z > maxDepth)) continue;
+
+            maxDepth = _hits[i].transform.position.z;
+            hit = _hits[i];
+        }
+
         if (hit.collider == null)
         {
             return;
@@ -42,6 +55,6 @@ public class PointerManager : MonoBehaviour
             return;
         }
 
-        clickable.Click();
+        clickable.Click(hit.point);
     }
 }

@@ -3,13 +3,13 @@ using UnityEditor;
 using UnityEngine;
 
 [Serializable]
-public struct Condition
+public struct GameStateProperty
 {
-    public string stateName;
+    public string name;
 }
 
 #if UNITY_EDITOR
-[CustomPropertyDrawer(typeof(Condition))]
+[CustomPropertyDrawer(typeof(GameStateProperty))]
 public class ConditionEditor : PropertyDrawer
 {
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
@@ -25,10 +25,10 @@ public class ConditionEditor : PropertyDrawer
         var index = EditorGUI.Popup(
             rect,
             "State Name",
-            GameState.availableGameStates.IndexOf(stateName.stringValue),
-            GameState.availableGameStates.ToArray()
+            GameStateProperties.AllProperties.IndexOf(stateName.stringValue),
+            GameStateProperties.AllProperties.ToArray()
         );
-        stateName.stringValue = GameState.availableGameStates[index < 0 ? 0 : index];
+        stateName.stringValue = GameStateProperties.AllProperties[index < 0 ? 0 : index];
     }
 }
 #endif

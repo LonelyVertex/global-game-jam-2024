@@ -50,7 +50,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -353,6 +353,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Items_Map
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 266
+        width: 247
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb740e1b3cca4cbc8d861194c33a74c
+      internalID: 1812734598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -373,6 +394,7 @@ TextureImporter:
       Items_Flour: -93413873
       Items_Frog: 185857484
       Items_Leaf: 1782757546
+      Items_Map: 1812734598
       Items_Pie: 347414051
       Items_Potion: 1609673356
       Items_Scythe: 725122688

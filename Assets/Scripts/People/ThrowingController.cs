@@ -8,9 +8,12 @@ public class ThrowingController : MonoBehaviour
     [Space]
     [SerializeField] private AnimationCurve _throwAnimationCurve;
     [SerializeField] private float _duration;
+    [SerializeField] private float _multiplier;
 
     [Space]
     [SerializeField] private MockItem _mockItem;
+
+    public float duration => _duration;
 
     public IEnumerator ThrowItem(Item item, Vector3 target)
     {
@@ -25,12 +28,15 @@ public class ThrowingController : MonoBehaviour
         tr.SetParent(null, worldPositionStays: true);
 
         var startPosition = tr.position;
-        for (var duration = 0.0f; duration < _duration; duration += Time.deltaTime)
+        for (var d = 0.0f; d < _duration; d += Time.deltaTime)
         {
-            var xDelta = duration / _duration;
+            var xDelta = d / _duration;
+            var yDelta = _throwAnimationCurve.Evaluate(xDelta);
 
-            tr.position = Vector3.Lerp(startPosition, target, xDelta);
+            tr.position = Vector3.Lerp(startPosition, target, xDelta) + Vector3.up * (_multiplier * yDelta);
             yield return null;
         }
+
+        _mockItem.gameObject.SetActive(false);
     }
 }

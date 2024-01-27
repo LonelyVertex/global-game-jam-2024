@@ -23,4 +23,12 @@ public class GameState : MonoBehaviour
             gameStateUpdatedEvent?.Invoke();
         }
     }
+
+    public void UnsetState(string state)
+    {
+        if (_currentGameState.Remove(state))
+        {
+            gameStateUpdatedEvent?.Invoke();
+        }
+    }
 }

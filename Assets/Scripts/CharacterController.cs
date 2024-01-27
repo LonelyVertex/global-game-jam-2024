@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    public const float SuccessDelay = 1.0f;
     public const float CatchDelay = 18f / 60f;
     public const float ThrowDelay = 14f / 60f;
     public const float FailDelay = 15f / 60f;

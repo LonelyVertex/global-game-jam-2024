@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 862aa6ee95cda444c8e8897188bf12ca
+guid: a3fcdb200c1b14572a9350ebb7f0fb0e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -50,7 +50,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -123,64 +123,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Character_Head
+      name: CharacterHeadSad_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 908
+        x: 92
+        y: 927
         width: 135
         height: 148
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 318bc44a7890b437c99169db0e479c03
-      internalID: 893647708
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_Arm
-      rect:
-        serializedVersion: 2
-        x: 199
-        y: 871
-        width: 63
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8408b6ecad0d44ce1a6d7067b6d38016
-      internalID: -682005628
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_Body
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 540
-        width: 240
-        height: 329
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 92e0c7fec8e2648069ebd81fad8397a7
-      internalID: 1541343085
+      spriteID: 8b1da651449464cbdb60795ca06f324f
+      internalID: 722865687
       vertices: []
       indices: 
       edges: []
@@ -196,9 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Character_Arm: -682005628
-      Character_Body: 1541343085
-      Character_Head: 893647708
+      CharacterHeadSad_0: 722865687
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,13 +1,17 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MapManager : MonoBehaviour
 {
     [SerializeField] private Transform _mapPlayer;
     [SerializeField] private GameObject _map;
+    [SerializeField] private Animator _animator;
 
     private MapTransition _mapTransition;
     private ScenesManager _scenesManager;
+    private EventSystem _eventSystem;
+    private GameState _gameState;
 
     private MapPlaceClickable[] _mapPlaces;
 
@@ -18,15 +22,37 @@ public class MapManager : MonoBehaviour
     private string _sceneName;
     private GameScene _gameScene;
 
+    private static readonly int Moving = Animator.StringToHash("Moving");
+
     protected void Start()
     {
         _mapTransition = FindObjectOfType<MapTransition>();
         _scenesManager = FindObjectOfType<ScenesManager>();
+        _eventSystem = FindObjectOfType<EventSystem>();
+        _gameState = FindObjectOfType<GameState>();
+
+        _scenesManager.allScenesLoadedEvent += HandleAllScenesLoaded;
 
         _mapPlaces = GetComponentsInChildren<MapPlaceClickable>();
         foreach (var p in _mapPlaces)
         {
             p.mapPlaceClickedEvent += HandleMapPlaceClicked;
+        }
+    }
+
+    private void HandleAllScenesLoaded()
+    {
+        _scenesManager.allScenesLoadedEvent -= HandleAllScenesLoaded;
+
+        if (!_gameState.IsStateOn(GameStateProperties.ItemMap))
+        {
+            _map.SetActive(false);
+            _gameScene = _scenesManager.GetScene(GameStateProperties.PlaceHome);
+            _gameScene.gameObject.SetActive(true);
+            _gameScene.gameSceneFinishedEvent += HandleGameSceneFinished;
+
+            StartCoroutine(_mapTransition.MapToSceneFadeOut());
+            return;
         }
 
         StartCoroutine(_mapTransition.SceneToMapFadeOut());
@@ -42,7 +68,7 @@ public class MapManager : MonoBehaviour
         _mapPlayer.position =Vector2.MoveTowards(
             _mapPlayer.position,
             _targetPosition,
-            1.0f
+            0.1f
         );
 
         if (!Mathf.Approximately(_mapPlayer.position.x, _targetPosition.x) ||
@@ -52,6 +78,7 @@ public class MapManager : MonoBehaviour
         }
 
         _movingPlayer = false;
+        _animator.SetBool(Moving, false);
 
         if (!_shouldOpenScene)
         {
@@ -69,9 +96,16 @@ public class MapManager : MonoBehaviour
         }
         _movingPlayer = true;
 
+        _animator.SetBool(Moving, true);
+
         _targetPosition = point;
         _shouldOpenScene = gameStateProperty.name != GameStateProperties.PlaceMap;
         _sceneName = gameStateProperty.name;
+
+        if (_shouldOpenScene)
+        {
+            _eventSystem.enabled = false;
+        }
     }
 
     private IEnumerator MapOutTransition()
@@ -85,6 +119,8 @@ public class MapManager : MonoBehaviour
         _gameScene.gameSceneFinishedEvent += HandleGameSceneFinished;
 
         yield return _mapTransition.MapToSceneFadeOut();
+
+        _eventSystem.enabled = true;
     }
 
     private IEnumerator MapInTransition()

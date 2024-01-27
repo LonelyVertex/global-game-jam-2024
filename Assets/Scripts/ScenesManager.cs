@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class ScenesManager : MonoBehaviour
 {
     [SerializeField] private SceneReference[] _scenes;
+
+    public event Action allScenesLoadedEvent;
 
     private readonly Dictionary<string, GameScene> _propToScene = new();
 
@@ -47,6 +50,8 @@ public class ScenesManager : MonoBehaviour
             gameScene.gameObject.SetActive(false);
             _propToScene.Add(gameScene.gameSceneProperty.name, gameScene);
         }
+
+        allScenesLoadedEvent?.Invoke();
     }
 
     public GameScene GetScene(string sceneProperty)

@@ -11,6 +11,11 @@ public class MapTransition : MonoBehaviour
     [SerializeField] private AnimationClip _sceneToMapFadeIn;
     [SerializeField] private AnimationClip _sceneToMapFadeOut;
 
+    public void Hide()
+    {
+        _mapToSceneFadeOut.SampleAnimation(gameObject, _mapToSceneFadeOut.length);
+    }
+
     public IEnumerator MapToSceneFadeIn()
     {
         _animation.clip = _mapToSceneFadeIn;

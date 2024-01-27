@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 52925778568461926, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 52925778568461926, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 320547676194662497, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1346314498, guid: c2a524463041b4a47b6f319483b4eda0, type: 3}
+    - target: {fileID: 719892058357764831, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1888935105666103767, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -48,9 +64,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2228747682135754173, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -588323259, guid: c2a524463041b4a47b6f319483b4eda0, type: 3}
+    - target: {fileID: 2629081790355297762, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1114766182, guid: c2a524463041b4a47b6f319483b4eda0, type: 3}
+    - target: {fileID: 5269245638856905057, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1255476658, guid: c2a524463041b4a47b6f319483b4eda0, type: 3}
+    - target: {fileID: 6977158249683438781, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1114766182, guid: c2a524463041b4a47b6f319483b4eda0, type: 3}
+    - target: {fileID: 7120247134485127153, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7368904531584657091, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
       propertyPath: m_Name
-      value: Character
+      value: Granma
+      objectReference: {fileID: 0}
+    - target: {fileID: 7465530170545406554, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7465530170545406554, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016832949924518736, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

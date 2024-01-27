@@ -19,13 +19,15 @@ public class ConditionEditor : PropertyDrawer
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
-        var stateName = property.FindPropertyRelative("stateName");
+        var stateName = property.FindPropertyRelative("name");
 
         var rect = new Rect(position.x, 0.0f, position.width, EditorGUIUtility.singleLineHeight);
+
+        var currentIndex = GameStateProperties.AllProperties.IndexOf(stateName.stringValue);
         var index = EditorGUI.Popup(
             rect,
             "State Name",
-            GameStateProperties.AllProperties.IndexOf(stateName.stringValue),
+            currentIndex < 0 ? 0 : currentIndex,
             GameStateProperties.AllProperties.ToArray()
         );
         stateName.stringValue = GameStateProperties.AllProperties[index < 0 ? 0 : index];

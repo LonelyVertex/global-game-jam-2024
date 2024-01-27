@@ -15,5 +15,5 @@ MonoBehaviour:
   gameSprite: {fileID: 0}
   uiSprite: {fileID: 0}
   itemProperty:
-    stateName: item_map
+    name: item_map
   onClickConditions: []

@@ -1,22 +1,35 @@
+using System.Collections;
 using UnityEngine;
 
 public class MapManager : MonoBehaviour
 {
     [SerializeField] private Transform _mapPlayer;
+    [SerializeField] private GameObject _map;
+
+    private MapTransition _mapTransition;
+    private ScenesManager _scenesManager;
 
     private MapPlaceClickable[] _mapPlaces;
 
     private bool _movingPlayer;
-    private bool _shouldOpenScene;
     private Vector2 _targetPosition;
-    
+
+    private bool _shouldOpenScene;
+    private string _sceneName;
+    private GameScene _gameScene;
+
     protected void Start()
     {
+        _mapTransition = FindObjectOfType<MapTransition>();
+        _scenesManager = FindObjectOfType<ScenesManager>();
+
         _mapPlaces = GetComponentsInChildren<MapPlaceClickable>();
         foreach (var p in _mapPlaces)
         {
             p.mapPlaceClickedEvent += HandleMapPlaceClicked;
         }
+
+        StartCoroutine(_mapTransition.SceneToMapFadeOut());
     }
 
     protected void Update()
@@ -45,7 +58,7 @@ public class MapManager : MonoBehaviour
             return;
         }
 
-        // Open Scene
+        StartCoroutine(MapOutTransition());
     }
 
     private void HandleMapPlaceClicked(GameStateProperty gameStateProperty, Vector2 point)
@@ -58,5 +71,36 @@ public class MapManager : MonoBehaviour
 
         _targetPosition = point;
         _shouldOpenScene = gameStateProperty.name != GameStateProperties.PlaceMap;
+        _sceneName = gameStateProperty.name;
+    }
+
+    private IEnumerator MapOutTransition()
+    {
+        yield return _mapTransition.MapToSceneFadeIn();
+
+        _map.SetActive(false);
+        _gameScene = _scenesManager.GetScene(_sceneName);
+        _gameScene.gameObject.SetActive(true);
+
+        _gameScene.gameSceneFinishedEvent += HandleGameSceneFinished;
+
+        yield return _mapTransition.MapToSceneFadeOut();
+    }
+
+    private IEnumerator MapInTransition()
+    {
+        _gameScene.gameSceneFinishedEvent -= HandleGameSceneFinished;
+
+        yield return _mapTransition.SceneToMapFadeIn();
+
+        _map.SetActive(true);
+        _gameScene.gameObject.SetActive(false);
+
+        yield return _mapTransition.SceneToMapFadeOut();
+    }
+
+    private void HandleGameSceneFinished()
+    {
+        StartCoroutine(MapInTransition());
     }
 }

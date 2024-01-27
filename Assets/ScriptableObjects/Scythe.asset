@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d7a13f0125118448008203b911f536, type: 3}
   m_Name: Scythe
   m_EditorClassIdentifier: 
-  gameSprite: {fileID: 0}
-  uiSprite: {fileID: 0}
+  sprite: {fileID: 725122688, guid: b9a3aa7ac8d6a4a819ad2a3a5dab4b28, type: 3}
   itemProperty:
-    stateName: item_scythe
+    name: item_scythe
   onClickConditions:
-  - stateName: state_gran_has_beer
+  - name: 

@@ -3,7 +3,13 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
-    private HashSet<string> _currentGameState;
+    public event System.Action gameStateUpdatedEvent;
+
+    private HashSet<string> _currentGameState = new()
+    {
+        GameStateProperties.ItemMap,
+        GameStateProperties.ItemFrog
+    };
 
     public bool IsStateOn(string state)
     {
@@ -12,6 +18,9 @@ public class GameState : MonoBehaviour
 
     public void SetState(string state)
     {
-        _currentGameState.Add(state);
+        if (_currentGameState.Add(state))
+        {
+            gameStateUpdatedEvent?.Invoke();
+        }
     }
 }

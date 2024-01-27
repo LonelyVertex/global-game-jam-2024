@@ -11,5 +11,20 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HouseScene/House.unity
     guid: c93fe43ff57bce64894cf5c143e2fa08
+  - enabled: 1
+    path: Assets/Scenes/PubScene.unity
+    guid: cffb46b74c411ee4988e0b706a73aa06
+  - enabled: 1
+    path: Assets/Scenes/UIScene.unity
+    guid: 24080357d9b9ae04a8f3be3aea4b7018
+  - enabled: 1
+    path: Assets/Scenes/BucketScene.unity
+    guid: 5cb9a0a40a2c6d241ba85435fa9d8991
+  - enabled: 1
+    path: Assets/Scenes/WitchScene.unity
+    guid: 17835866096a3b8448b331e1682981a1
+  - enabled: 1
+    path: Assets/Scenes/MapScene.unity
+    guid: 8826b547289dfa9409d26b052bf1fc0e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: b57cf527345e74843b4c51c38e13d4e3, type: 2}

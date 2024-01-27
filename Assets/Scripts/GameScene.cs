@@ -4,25 +4,24 @@ public abstract class GameScene : MonoBehaviour
 {
     public GameStateProperty gameSceneProperty;
 
-    private GameState _gameState;
-    private Inventory _inventory;
+    public event System.Action gameSceneFinishedEvent;
 
-    protected void Start()
+    protected GameState gameState;
+    protected Inventory inventory;
+
+    protected void Awake()
     {
-        _gameState = FindObjectOfType<GameState>();
-        _inventory = FindObjectOfType<Inventory>();
+        gameState = FindObjectOfType<GameState>();
+        inventory = FindObjectOfType<Inventory>();
 
-        _inventory.itemClickedEvent += HandleItemClicked;
-        _inventory.mapClickedEvent += HandleMapClicked;
+        inventory.itemClickedEvent += HandleInventoryItemClicked;
+        inventory.mapClickedEvent += HandleInventoryMapClicked;
     }
 
-    private void HandleItemClicked(Item item)
-    {
-        // Do some item handling
-    }
+    protected virtual void HandleInventoryItemClicked(Item item) { }
 
-    private void HandleMapClicked()
+    private void HandleInventoryMapClicked()
     {
-        // Close current scene
+        gameSceneFinishedEvent?.Invoke();
     }
 }

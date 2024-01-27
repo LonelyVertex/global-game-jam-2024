@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -7,9 +8,9 @@ public class ScenesManager : MonoBehaviour
 {
     [SerializeField] private SceneReference[] _scenes;
 
-    private Dictionary<string, GameScene> _propToScene = new();
+    private readonly Dictionary<string, GameScene> _propToScene = new();
 
-    protected void Start()
+    protected IEnumerator Start()
     {
         var activeScenesCount = SceneManager.loadedSceneCount;
         var activeScenes = new HashSet<string>();
@@ -20,31 +21,42 @@ public class ScenesManager : MonoBehaviour
 
         foreach (var scene in _scenes)
         {
-            if (activeScenes.Contains(scene.ScenePath))
+            if (!activeScenes.Contains(scene.ScenePath))
             {
-                continue;
+                SceneManager.LoadScene(scene.ScenePath, LoadSceneMode.Additive);
             }
+        }
 
-            SceneManager.LoadScene(scene.ScenePath, LoadSceneMode.Additive);
+        yield return null;
+
+        foreach (var scene in _scenes)
+        {
             var loadedScene = SceneManager.GetSceneByPath(scene.ScenePath);
 
             Assert.AreEqual(loadedScene.rootCount, 1);
 
             var root = loadedScene.GetRootGameObjects()[0];
-            var gameScene = root.GetComponent<GameScene>();
+            root.SetActive(true);
 
+            var gameScene = root.GetComponent<GameScene>();
+            if (gameScene == null)
+            {
+                continue;
+            }
+
+            gameScene.gameObject.SetActive(false);
             _propToScene.Add(gameScene.gameSceneProperty.name, gameScene);
         }
     }
 
-    public void EnableScene(string sceneProperty)
+    public GameScene GetScene(string sceneProperty)
     {
         if (!_propToScene.TryGetValue(sceneProperty, out var gameScene))
         {
             Debug.LogWarning($"Couldn't find scene with name {sceneProperty}");
-            return;
+            return null;
         }
 
-        
+        return gameScene;
     }
 }

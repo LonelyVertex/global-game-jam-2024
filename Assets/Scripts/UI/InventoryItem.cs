@@ -8,13 +8,15 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
 
     public event System.Action<Item> inventoryItemClicked;
 
+    public GameStateProperty property => _item.itemProperty;
+
     private Item _item;
 
     public void SetItem(Item item)
     {
         _item = item;
 
-        _itemImage.sprite = item.uiSprite;
+        _itemImage.sprite = item.sprite;
     }
 
     public void OnPointerClick(PointerEventData eventData)

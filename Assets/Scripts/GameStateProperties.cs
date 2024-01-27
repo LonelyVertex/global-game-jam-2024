@@ -7,6 +7,13 @@ public static class GameStateProperties
     public const string StateWellWithoutFrog = "state_well_without_frog";
 
     public const string PlaceMap = "place_map";
+    public const string PlaceHome = "place_home";
+    public const string PlaceWitch = "place_witch";
+    public const string PlacePub = "place_pub";
+    public const string PlaceStrawberryPatch = "place_strawberry_patch";
+    public const string PlaceGran = "place_gran";
+    public const string PlaceBucket = "place_bucket";
+    public const string PlaceWell = "place_well";
 
     public const string ItemMap = "item_map";
 
@@ -29,6 +36,13 @@ public static class GameStateProperties
         StateWellWithoutFrog,
 
         PlaceMap,
+        PlaceHome,
+        PlaceBucket,
+        PlaceGran,
+        PlaceWell,
+        PlaceWitch,
+        PlaceStrawberryPatch,
+        PlacePub,
 
         ItemMap,
 

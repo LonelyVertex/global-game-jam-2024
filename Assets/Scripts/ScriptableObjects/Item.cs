@@ -4,8 +4,7 @@ using UnityEngine;
 public class Item : ScriptableObject
 {
     [Header("Data")]
-    public Sprite gameSprite;
-    public Sprite uiSprite;
+    public Sprite sprite;
 
     [Header("ID")]
     public GameStateProperty itemProperty;

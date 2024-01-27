@@ -4,6 +4,7 @@ using UnityEngine;
 public class ItemClickable : Clickable
 {
     [SerializeField] private Item _item;
+    [SerializeField] private Animation _animation;
 
     public event System.Action<Item> clickSuccessfulEvent;
     public event System.Action clickFailedEvent;
@@ -19,6 +20,7 @@ public class ItemClickable : Clickable
     {
         if (!_item.onClickConditions.All(c => _gameState.IsStateOn(c.name)))
         {
+            _animation.Play();
             clickFailedEvent?.Invoke();
 
             return;

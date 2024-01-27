@@ -20,8 +20,6 @@ public class BucketScene : GameScene
 
     private void HandleBucketClicked(Item bucket)
     {
-        _bucket.gameObject.SetActive(false);
-
-        gameState.SetState(bucket.itemProperty.name);
+        StartCoroutine(PickItem(bucket, _bucket.gameObject));
     }
 }

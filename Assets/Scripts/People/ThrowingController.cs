@@ -23,26 +23,45 @@ public class ThrowingController : MonoBehaviour
 
     public IEnumerator ThrowItem(Item item, Vector3 target)
     {
-
-        _mockItem.transform.SetParent(_characterController.ObjectPointTransform, worldPositionStays: false);
-        _mockItem.SetItem(item);
-
-        _mockItem.gameObject.SetActive(true);
-
         _characterController.Throw();
 
         yield return new WaitForSeconds(CharacterController.ThrowDelay);
 
-        var tr = _mockItem.transform;
-        tr.SetParent(null, worldPositionStays: true);
+        _mockItem.SetItem(item);
+        _mockItem.gameObject.SetActive(true);
 
-        var startPosition = tr.position;
+        var tr = _mockItem.transform;
+
+        var startPosition = _characterController.ObjectPointTransform.position;
         for (var d = 0.0f; d < _duration; d += Time.deltaTime)
         {
             var xDelta = d / _duration;
             var yDelta = _throwAnimationCurve.Evaluate(xDelta);
 
             tr.position = Vector3.Lerp(startPosition, target, xDelta) + Vector3.up * (_multiplier * yDelta);
+            yield return null;
+        }
+
+        _mockItem.gameObject.SetActive(false);
+    }
+
+    public IEnumerator ReverseThrowItem(Item item, Vector3 origin)
+    {
+        _mockItem.SetItem(item);
+        _mockItem.gameObject.SetActive(true);
+
+        var tr = _mockItem.transform;
+        for (var d = 0.0f; d < _duration; d += Time.deltaTime)
+        {
+            var xDelta = d / _duration;
+            var yDelta = _throwAnimationCurve.Evaluate(xDelta);
+
+            tr.position = Vector3.Lerp(
+                origin,
+                _characterController.ObjectPointTransform.position,
+                xDelta
+            ) + Vector3.up * (_multiplier * yDelta);
+
             yield return null;
         }
 

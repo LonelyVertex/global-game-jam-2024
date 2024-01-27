@@ -82,6 +82,19 @@ public abstract class GameScene : MonoBehaviour
         eventSystem.enabled = true;
     }
 
+    protected IEnumerator PickItem(Item item, GameObject itemGo)
+    {
+        eventSystem.enabled = false;
+
+        itemGo.SetActive(false);
+
+        yield return janek.throwingController.ReverseThrowItem(item, itemGo.transform.position);
+
+        gameState.SetState(item.itemProperty.name);
+
+        eventSystem.enabled = true;
+    }
+
     private void HandleInventoryMapClicked()
     {
         gameSceneFinishedEvent?.Invoke();

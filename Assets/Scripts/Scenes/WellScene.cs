@@ -53,6 +53,8 @@ public class WellScene : GameScene
 
         _frogGameObject.SetActive(false);
 
+        yield return janek.throwingController.ReverseThrowItem(_frog, _frogGameObject.transform.position);
+
         gameState.SetState(GameStateProperties.StateWellWithoutFrog);
         gameState.SetState(_frog.itemProperty.name);
         gameState.UnsetState(_leaf.itemProperty.name);
@@ -64,7 +66,10 @@ public class WellScene : GameScene
     {
         eventSystem.enabled = false;
 
-        yield return janek.throwingController.ThrowItem(_bucket, _frogTarget.position);
+        var pos = _frogTarget.position;
+
+        yield return janek.throwingController.ThrowItem(_bucket, pos);
+        yield return janek.throwingController.ReverseThrowItem(_water, pos);
 
         gameState.SetState(_water.itemProperty.name);
         gameState.UnsetState(_bucket.itemProperty.name);

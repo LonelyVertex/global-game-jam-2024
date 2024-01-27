@@ -7,7 +7,8 @@ public class GameState : MonoBehaviour
 
     private readonly HashSet<string> _currentGameState = new()
     {
-        GameStateProperties.ItemMap
+        GameStateProperties.ItemMap,
+        GameStateProperties.ItemFrog
     };
 
     public bool IsStateOn(string state)

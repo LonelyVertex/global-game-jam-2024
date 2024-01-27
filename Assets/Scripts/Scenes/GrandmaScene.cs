@@ -52,9 +52,7 @@ public class GrandmaScene : GameScene
 
     private void HandleScytheClickSuccessful(Item scythe)
     {
-        _scytheClickable.gameObject.SetActive(false);
-
-        gameState.SetState(scythe.itemProperty.name);
+        StartCoroutine(PickItem(scythe, _scytheClickable.gameObject));
     }
 
     private IEnumerator WantBeer()

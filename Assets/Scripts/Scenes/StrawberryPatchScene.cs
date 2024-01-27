@@ -35,20 +35,17 @@ public class StrawberryPatchScene : GameScene
 
     private void HandleLeafClicked(Item leaf)
     {
-        _leafClickable.gameObject.SetActive(false);
-
-        gameState.SetState(leaf.itemProperty.name);
+        StartCoroutine(PickItem(leaf, _leafClickable.gameObject));
     }
 
     private void HandleStrawberriesClickSuccess(Item strawberry)
     {
-        _strawberries.gameObject.SetActive(false);
-        gameState.SetState(GameStateProperties.ItemStrawberries);
+        StartCoroutine(PickItem(strawberry, _strawberries.gameObject));
     }
 
     private void HandleStrawberriesClickFail()
     {
-        // Shake
+        FailAndShowHintIfNeeded(janek, GameStateProperties.ItemStrawberries, _scythe);
     }
 
     protected override void HandleInventoryItemClicked(Item item)

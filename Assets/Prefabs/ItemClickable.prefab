@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3311865080720558926}
   - component: {fileID: 4674368584731513461}
   - component: {fileID: 5623422107486899542}
+  - component: {fileID: 2165472325144934097}
   m_Layer: 0
   m_Name: ItemClickable
   m_TagString: Untagged
@@ -46,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _item: {fileID: 11400000, guid: 3e1b96d18a5520544abf170f5d595c88, type: 2}
+  _animation: {fileID: 2165472325144934097}
 --- !u!212 &5623422107486899542
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98,3 +100,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!111 &2165472325144934097
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825431984258332037}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a9050828c76fc6745b9f8904bcbc55d2, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a9050828c76fc6745b9f8904bcbc55d2, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0

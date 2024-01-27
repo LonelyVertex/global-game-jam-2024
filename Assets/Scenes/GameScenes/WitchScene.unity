@@ -207,37 +207,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &667880275
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 667880276}
-  m_Layer: 0
-  m_Name: JanekTarget
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &667880276
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 667880275}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.47, y: 1.44, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2124086010}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &915831190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -253,6 +222,14 @@ PrefabInstance:
     - target: {fileID: 1049336217243294315, guid: 32dc1b1cd7830fc4484dfb65d1b068fc, type: 3}
       propertyPath: m_Name
       value: Janek
+      objectReference: {fileID: 0}
+    - target: {fileID: 4530120305015553899, guid: 32dc1b1cd7830fc4484dfb65d1b068fc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 4530120305015553899, guid: 32dc1b1cd7830fc4484dfb65d1b068fc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.22
       objectReference: {fileID: 0}
     - target: {fileID: 5638482453194984606, guid: 32dc1b1cd7830fc4484dfb65d1b068fc, type: 3}
       propertyPath: m_LocalScale.x
@@ -316,48 +293,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8285143800043373951, guid: 32dc1b1cd7830fc4484dfb65d1b068fc, type: 3}
   m_PrefabInstance: {fileID: 915831190}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &915831195 stripped
+--- !u!114 &915831192 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2854529252580570217, guid: 32dc1b1cd7830fc4484dfb65d1b068fc, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8974282215046119423, guid: 32dc1b1cd7830fc4484dfb65d1b068fc, type: 3}
   m_PrefabInstance: {fileID: 915831190}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deb33e6f27588424d8a7b42f2eec02f5, type: 3}
+  m_Script: {fileID: 11500000, guid: f031c7499e8e4d14dbd098e5570fb560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1000455876
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1000455877}
-  m_Layer: 0
-  m_Name: WitchTarget
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1000455877
+--- !u!4 &915831193 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4530120305015553899, guid: 32dc1b1cd7830fc4484dfb65d1b068fc, type: 3}
+  m_PrefabInstance: {fileID: 915831190}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000455876}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2124086010}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2111537807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -369,6 +320,14 @@ PrefabInstance:
     - target: {fileID: 1165292858721174807, guid: 4a93cd4aa7b487a478447d9e5081b964, type: 3}
       propertyPath: m_Name
       value: Witch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340242875392024599, guid: 4a93cd4aa7b487a478447d9e5081b964, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340242875392024599, guid: 4a93cd4aa7b487a478447d9e5081b964, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 7808872829914487299, guid: 4a93cd4aa7b487a478447d9e5081b964, type: 3}
       propertyPath: m_LocalPosition.x
@@ -420,17 +379,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7808872829914487299, guid: 4a93cd4aa7b487a478447d9e5081b964, type: 3}
   m_PrefabInstance: {fileID: 2111537807}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2111537811 stripped
+--- !u!114 &2111537809 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6592353703255046870, guid: 4a93cd4aa7b487a478447d9e5081b964, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7074873767191699587, guid: 4a93cd4aa7b487a478447d9e5081b964, type: 3}
   m_PrefabInstance: {fileID: 2111537807}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51b52e25262915240868a8860eb099d4, type: 3}
+  m_Script: {fileID: 11500000, guid: f031c7499e8e4d14dbd098e5570fb560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &2111537810 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2340242875392024599, guid: 4a93cd4aa7b487a478447d9e5081b964, type: 3}
+  m_PrefabInstance: {fileID: 2111537807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2124086009
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,8 +428,6 @@ Transform:
   - {fileID: 547833151}
   - {fileID: 2111537808}
   - {fileID: 915831191}
-  - {fileID: 1000455877}
-  - {fileID: 667880276}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2124086011
@@ -480,12 +442,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b92115844240a254fabd5ec156121e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  janek: {fileID: 915831192}
+  janekTarget: {fileID: 915831193}
   gameSceneProperty:
     name: place_witch
-  _janek: {fileID: 915831195}
-  _witch: {fileID: 2111537811}
-  _witchTarget: {fileID: 1000455877}
-  _janekTarget: {fileID: 667880276}
+  _witch: {fileID: 2111537809}
+  _witchTarget: {fileID: 2111537810}
   _potion: {fileID: 11400000, guid: 92282ca42a4856748abb71def23e38ca, type: 2}
   _frog: {fileID: 11400000, guid: 984f48d8104321946aa0fdc64f42e2cb, type: 2}
 --- !u!1660057539 &9223372036854775807

@@ -1,5 +1,7 @@
+using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PointerManager : MonoBehaviour
@@ -7,10 +9,17 @@ public class PointerManager : MonoBehaviour
     [SerializeField] private Camera _camera;
     [SerializeField] private InputActionAsset _inputActions;
 
+    private EventSystem _eventSystem;
+
     private InputAction _clickAction;
     private InputAction _mousePosition;
 
     private RaycastHit2D[] _hits = new RaycastHit2D[2];
+
+    protected void Awake()
+    {
+        _eventSystem = FindObjectOfType<EventSystem>();
+    }
 
     protected void OnEnable()
     {
@@ -27,7 +36,10 @@ public class PointerManager : MonoBehaviour
 
     protected void Update()
     {
-        if (!_clickAction.WasReleasedThisFrame())
+        if (
+            !_eventSystem.enabled ||
+            !_clickAction.WasReleasedThisFrame()
+        )
         {
             return;
         }

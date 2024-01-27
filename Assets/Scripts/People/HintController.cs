@@ -10,11 +10,23 @@ public class HintController : MonoBehaviour
     [SerializeField] private float _showDelay;
     [SerializeField] private float _hideDelay;
 
+    public float showDelay => _showDelay;
+
     private Coroutine _coroutine;
 
     protected void Awake()
     {
         _canvasGroup.alpha = 0.0f;
+    }
+
+    private void OnEnable()
+    {
+        _canvasGroup.alpha = 0.0f;
+    }
+
+    private void OnDisable()
+    {
+        _coroutine = null;
     }
 
     public void Show(Item item)

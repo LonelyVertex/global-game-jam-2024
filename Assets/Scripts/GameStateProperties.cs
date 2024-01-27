@@ -2,7 +2,10 @@ using System.Collections.Generic;
 
 public static class GameStateProperties
 {
-    public const string PersonWitchSatisfied = "person_witch_satisfied";
+    public const string PersonWitchHappy = "person_witch_happy";
+    public const string PersonMillerHappy = "person_miller_happy";
+    public const string PersonInnkeeperHappy = "person_innkeeper_happy";
+    public const string PersonGranHappy = "person_gran_happy";
 
     public const string PlaceMap = "place_map";
     public const string PlaceHome = "place_home";
@@ -32,6 +35,11 @@ public static class GameStateProperties
 
     public static readonly List<string> AllProperties = new ()
     {
+        PersonWitchHappy,
+        PersonMillerHappy,
+        PersonInnkeeperHappy,
+        PersonGranHappy,
+
         PlaceMap,
         PlaceHome,
         PlaceBucket,

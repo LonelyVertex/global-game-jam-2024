@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -15,10 +16,18 @@ public class ThrowingController : MonoBehaviour
 
     public float duration => _duration;
 
+    protected void Awake()
+    {
+        _mockItem.gameObject.SetActive(false);
+    }
+
     public IEnumerator ThrowItem(Item item, Vector3 target)
     {
-        _mockItem.transform.SetParent(_characterController.ObjectPointTransform);
+
+        _mockItem.transform.SetParent(_characterController.ObjectPointTransform, worldPositionStays: false);
         _mockItem.SetItem(item);
+
+        _mockItem.gameObject.SetActive(true);
 
         _characterController.Throw();
 

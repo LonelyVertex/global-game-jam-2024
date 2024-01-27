@@ -4,15 +4,19 @@ public class BucketScene : GameScene
 {
     [SerializeField] private ItemClickable _bucket;
 
-    protected void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
+
         _bucket.gameObject.SetActive(!gameState.IsStateOn(GameStateProperties.ItemBucket));
 
         _bucket.clickSuccessfulEvent += HandleBucketClicked;
     }
 
-    protected void OnDisable()
+    protected override void OnDisable()
     {
+        base.OnDisable();
+
         _bucket.clickSuccessfulEvent -= HandleBucketClicked;
     }
 

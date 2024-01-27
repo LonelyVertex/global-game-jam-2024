@@ -24,12 +24,14 @@ public static class GameStateProperties
     public const string ItemPotion = "item_potion";
     public const string ItemFlour = "item_flour";
 
+    public const string ItemLeaf = "item_leaf";
     public const string ItemBucket = "item_bucket";
     public const string ItemWater = "item_water";
 
+    public const string ItemPie = "item_pie";
+
     public static readonly List<string> AllProperties = new ()
     {
-
         PlaceMap,
         PlaceHome,
         PlaceBucket,
@@ -50,7 +52,10 @@ public static class GameStateProperties
         ItemPotion,
         ItemFlour,
 
+        ItemLeaf,
         ItemBucket,
-        ItemWater
+        ItemWater,
+
+        ItemPie
     };
 }

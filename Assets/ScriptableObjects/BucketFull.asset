@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02d7a13f0125118448008203b911f536, type: 3}
-  m_Name: Scythe
+  m_Name: BucketFull
   m_EditorClassIdentifier: 
-  sprite: {fileID: 725122688, guid: b9a3aa7ac8d6a4a819ad2a3a5dab4b28, type: 3}
+  sprite: {fileID: -607092245, guid: b9a3aa7ac8d6a4a819ad2a3a5dab4b28, type: 3}
   itemProperty:
-    name: item_scythe
-  onClickConditions:
-  - name: place_map
+    name: item_water
+  onClickConditions: []

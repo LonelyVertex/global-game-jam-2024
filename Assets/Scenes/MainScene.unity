@@ -307,12 +307,20 @@ MonoBehaviour:
     scenePath: Assets/Scenes/MapScene.unity
   - sceneAsset: {fileID: 102900000, guid: 24080357d9b9ae04a8f3be3aea4b7018, type: 3}
     scenePath: Assets/Scenes/UIScene.unity
-  - sceneAsset: {fileID: 102900000, guid: cffb46b74c411ee4988e0b706a73aa06, type: 3}
-    scenePath: Assets/Scenes/PubScene.unity
   - sceneAsset: {fileID: 102900000, guid: 5cb9a0a40a2c6d241ba85435fa9d8991, type: 3}
-    scenePath: Assets/Scenes/BucketScene.unity
+    scenePath: Assets/Scenes/GameScenes/BucketScene.unity
+  - sceneAsset: {fileID: 102900000, guid: 1c93b3701df51134d91b6a72c4e7bf6b, type: 3}
+    scenePath: Assets/Scenes/GameScenes/GrandmaScene.unity
+  - sceneAsset: {fileID: 102900000, guid: 77b892c704459a242a5fb0a04e908d54, type: 3}
+    scenePath: Assets/Scenes/GameScenes/HomeScene.unity
+  - sceneAsset: {fileID: 102900000, guid: cffb46b74c411ee4988e0b706a73aa06, type: 3}
+    scenePath: Assets/Scenes/GameScenes/PubScene.unity
+  - sceneAsset: {fileID: 102900000, guid: b857625aff00f9d4cb47ac7ee645c82b, type: 3}
+    scenePath: Assets/Scenes/GameScenes/StrawberryPatchScene.unity
+  - sceneAsset: {fileID: 102900000, guid: 6f2aad042f478ee4d8771d4d73ba4be8, type: 3}
+    scenePath: Assets/Scenes/GameScenes/WellScene.unity
   - sceneAsset: {fileID: 102900000, guid: 17835866096a3b8448b331e1682981a1, type: 3}
-    scenePath: Assets/Scenes/WitchScene.unity
+    scenePath: Assets/Scenes/GameScenes/WitchScene.unity
 --- !u!4 &1009353744
 Transform:
   m_ObjectHideFlags: 0

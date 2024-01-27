@@ -5,11 +5,11 @@ public class GameState : MonoBehaviour
 {
     public event System.Action gameStateUpdatedEvent;
 
-    private HashSet<string> _currentGameState = new()
+    private readonly HashSet<string> _currentGameState = new()
     {
         GameStateProperties.ItemMap,
-        GameStateProperties.ItemFrog,
-        GameStateProperties.ItemScythe
+        GameStateProperties.ItemMoney,
+        GameStateProperties.ItemPotion
     };
 
     public bool IsStateOn(string state)

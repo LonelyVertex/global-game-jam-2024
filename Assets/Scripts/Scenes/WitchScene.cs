@@ -33,6 +33,7 @@ public class WitchScene : GameScene
         yield return _janek.throwingController.ThrowItem(item, _witchTarget.position);
 
         _witch.characterController.Success();
+        gameState.SetState(GameStateProperties.PersonWitchSatisfied);
 
         yield return new WaitForSeconds(CharacterController.SuccessDelay);
 

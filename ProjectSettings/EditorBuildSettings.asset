@@ -12,19 +12,31 @@ EditorBuildSettings:
     path: Assets/Scenes/HouseScene/House.unity
     guid: c93fe43ff57bce64894cf5c143e2fa08
   - enabled: 1
-    path: Assets/Scenes/PubScene.unity
+    path: Assets/Scenes/GameScenes/PubScene.unity
     guid: cffb46b74c411ee4988e0b706a73aa06
   - enabled: 1
     path: Assets/Scenes/UIScene.unity
     guid: 24080357d9b9ae04a8f3be3aea4b7018
   - enabled: 1
-    path: Assets/Scenes/BucketScene.unity
+    path: Assets/Scenes/GameScenes/BucketScene.unity
     guid: 5cb9a0a40a2c6d241ba85435fa9d8991
   - enabled: 1
-    path: Assets/Scenes/WitchScene.unity
+    path: Assets/Scenes/GameScenes/WitchScene.unity
     guid: 17835866096a3b8448b331e1682981a1
   - enabled: 1
     path: Assets/Scenes/MapScene.unity
     guid: 8826b547289dfa9409d26b052bf1fc0e
+  - enabled: 1
+    path: Assets/Scenes/GameScenes/GrandmaScene.unity
+    guid: 1c93b3701df51134d91b6a72c4e7bf6b
+  - enabled: 1
+    path: Assets/Scenes/GameScenes/HomeScene.unity
+    guid: 77b892c704459a242a5fb0a04e908d54
+  - enabled: 1
+    path: Assets/Scenes/GameScenes/StrawberryPatchScene.unity
+    guid: b857625aff00f9d4cb47ac7ee645c82b
+  - enabled: 1
+    path: Assets/Scenes/GameScenes/WellScene.unity
+    guid: 6f2aad042f478ee4d8771d4d73ba4be8
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: b57cf527345e74843b4c51c38e13d4e3, type: 2}

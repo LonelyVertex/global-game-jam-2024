@@ -5,12 +5,11 @@ using UnityEngine.EventSystems;
 
 public abstract class GameScene : MonoBehaviour
 {
-    [Header("Janek")]
-    [SerializeField] protected Person janek;
-    [SerializeField] protected Transform janekTarget;
-
     public GameStateProperty gameSceneProperty;
 
+    [Header("Janek")]
+    [SerializeField] protected Person janek;
+    
     public event Action gameSceneFinishedEvent;
 
     protected EventSystem eventSystem;
@@ -72,7 +71,7 @@ public abstract class GameScene : MonoBehaviour
             yield break;
         }
 
-        StartCoroutine(recipient.throwingController.ThrowItem(itemToGive, janekTarget.position));
+        StartCoroutine(recipient.throwingController.ThrowItem(itemToGive, janek.target.position));
 
         yield return new WaitForSeconds(recipient.throwingController.duration - CharacterController.CatchDelay);
 

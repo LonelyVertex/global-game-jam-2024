@@ -15,4 +15,5 @@ MonoBehaviour:
   sprite: {fileID: -131105715, guid: b9a3aa7ac8d6a4a819ad2a3a5dab4b28, type: 3}
   itemProperty:
     name: item_strawberries
-  onClickConditions: []
+  onClickConditions:
+  - name: state_bush_cut

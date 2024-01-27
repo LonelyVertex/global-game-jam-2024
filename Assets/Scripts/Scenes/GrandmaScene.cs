@@ -78,7 +78,7 @@ public class GrandmaScene : GameScene
     {
         eventSystem.enabled = false;
 
-        StartCoroutine(recipient.throwingController.ThrowItem(itemToGive, janekTarget.position));
+        StartCoroutine(recipient.throwingController.ThrowItem(itemToGive, janek.target.position));
 
         yield return new WaitForSeconds(recipient.throwingController.duration - CharacterController.CatchDelay);
 

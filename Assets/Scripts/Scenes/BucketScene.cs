@@ -8,8 +8,6 @@ public class BucketScene : GameScene
     {
         base.OnEnable();
 
-        _bucket.gameObject.SetActive(!gameState.IsStateOn(GameStateProperties.ItemBucket));
-
         _bucket.clickSuccessfulEvent += HandleBucketClicked;
     }
 

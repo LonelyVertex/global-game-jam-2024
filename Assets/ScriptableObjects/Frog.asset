@@ -16,4 +16,4 @@ MonoBehaviour:
   itemProperty:
     name: item_frog
   onClickConditions:
-  - name: place_map
+  - name: item_leaf

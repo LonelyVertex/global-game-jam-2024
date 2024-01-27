@@ -11,7 +11,7 @@ public class WitchScene : GameScene
     {
         if (item.itemProperty.name != GameStateProperties.ItemFrog)
         {
-            FailAndShowHintIfNeeded(_witch, GameStateProperties.PersonInnkeeperHappy, _frog);
+            FailAndShowHintIfNeeded(_witch, GameStateProperties.PersonWitchHappy, _frog);
             return;
         }
 

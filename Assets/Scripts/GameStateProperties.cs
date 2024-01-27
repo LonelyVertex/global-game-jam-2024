@@ -7,6 +7,10 @@ public static class GameStateProperties
     public const string PersonInnkeeperHappy = "person_innkeeper_happy";
     public const string PersonGranHappy = "person_gran_happy";
 
+    public const string StateWellWithoutFrog = "state_well_without_frog";
+    public const string StateBushCut = "state_bush_cut";
+    public const string StateWellEmpty = "state_well_empty";
+
     public const string PlaceMap = "place_map";
     public const string PlaceHome = "place_home";
     public const string PlaceWitch = "place_witch";
@@ -21,6 +25,7 @@ public static class GameStateProperties
     public const string ItemBeer = "item_beer";
     public const string ItemMoney = "item_money";
     public const string ItemScythe = "item_scythe";
+    public const string ItemBush = "item_bush";
     public const string ItemStrawberries = "item_strawberries";
 
     public const string ItemFrog = "item_frog";
@@ -40,6 +45,9 @@ public static class GameStateProperties
         PersonInnkeeperHappy,
         PersonGranHappy,
 
+        StateWellWithoutFrog,
+        StateBushCut,
+
         PlaceMap,
         PlaceHome,
         PlaceBucket,
@@ -54,6 +62,7 @@ public static class GameStateProperties
         ItemBeer,
         ItemMoney,
         ItemScythe,
+        ItemBush,
         ItemStrawberries,
 
         ItemFrog,

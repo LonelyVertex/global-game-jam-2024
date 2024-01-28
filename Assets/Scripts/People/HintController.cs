@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class HintController : MonoBehaviour
 {
+    [SerializeField] private AudioController _audioController;
+
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private Image _hintImage;
 
@@ -89,6 +91,8 @@ public class HintController : MonoBehaviour
     {
         yield return new WaitForSeconds(_showDelay);
 
+        _audioController.PlayHint();
+
         _canvasGroup.alpha = 0.0f;
 
         action?.Invoke();
@@ -100,6 +104,8 @@ public class HintController : MonoBehaviour
         }
 
         _canvasGroup.alpha = 1.0f;
+
+        _audioController.PlayRequirements();
 
         yield return new WaitForSeconds(_hideDelay);
 

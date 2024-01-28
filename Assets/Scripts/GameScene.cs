@@ -45,6 +45,10 @@ public abstract class GameScene : MonoBehaviour
         {
             person.hintController.Show(item);
         }
+        else
+        {
+            person.audioController.PlayFail();
+        }
     }
 
     protected IEnumerator TransferItem(
@@ -63,7 +67,11 @@ public abstract class GameScene : MonoBehaviour
         recipient.characterController.Success();
         gameState.SetState(stateToSet);
 
-        yield return new WaitForSeconds(CharacterController.SuccessDelay);
+        yield return new WaitForSeconds(CharacterController.SuccessDelay / 2.0f);
+
+        recipient.audioController.PlaySuccess();
+
+        yield return new WaitForSeconds(CharacterController.SuccessDelay / 2.0f);
 
         if (itemToGive == null)
         {

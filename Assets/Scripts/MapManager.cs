@@ -7,11 +7,13 @@ public class MapManager : MonoBehaviour
     [SerializeField] private Transform _mapPlayer;
     [SerializeField] private GameObject _map;
     [SerializeField] private Animator _animator;
+    [SerializeField] private AudioSource _audioSource;
 
     private MapTransition _mapTransition;
     private ScenesManager _scenesManager;
     private EventSystem _eventSystem;
     private GameState _gameState;
+    private AmbienceAudioController _ambienceAudioController;
 
     private MapPlaceClickable[] _mapPlaces;
 
@@ -30,6 +32,7 @@ public class MapManager : MonoBehaviour
         _scenesManager = FindObjectOfType<ScenesManager>();
         _eventSystem = FindObjectOfType<EventSystem>();
         _gameState = FindObjectOfType<GameState>();
+        _ambienceAudioController = FindObjectOfType<AmbienceAudioController>();
 
         _scenesManager.allScenesLoadedEvent += HandleAllScenesLoaded;
 
@@ -46,6 +49,8 @@ public class MapManager : MonoBehaviour
 
         if (!_gameState.IsStateOn(GameStateProperties.ItemMap))
         {
+            _ambienceAudioController.TransitionToGameScene();
+
             _map.SetActive(false);
             _gameScene = _scenesManager.GetScene(GameStateProperties.PlaceHome);
             _gameScene.gameObject.SetActive(true);
@@ -79,6 +84,7 @@ public class MapManager : MonoBehaviour
 
         _movingPlayer = false;
         _animator.SetBool(Moving, false);
+        _audioSource.Stop();
 
         if (!_shouldOpenScene)
         {
@@ -96,6 +102,7 @@ public class MapManager : MonoBehaviour
         }
         _movingPlayer = true;
 
+        _audioSource.Play();
         _animator.SetBool(Moving, true);
 
         _targetPosition = point;
@@ -118,6 +125,7 @@ public class MapManager : MonoBehaviour
 
         _gameScene.gameSceneFinishedEvent += HandleGameSceneFinished;
 
+        _ambienceAudioController.TransitionToGameScene();
         yield return _mapTransition.MapToSceneFadeOut();
 
         _eventSystem.enabled = true;
@@ -132,6 +140,7 @@ public class MapManager : MonoBehaviour
         _map.SetActive(true);
         _gameScene.gameObject.SetActive(false);
 
+        _ambienceAudioController.TransitionToMap();
         yield return _mapTransition.SceneToMapFadeOut();
     }
 

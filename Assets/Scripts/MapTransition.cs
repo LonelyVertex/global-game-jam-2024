@@ -11,6 +11,11 @@ public class MapTransition : MonoBehaviour
     [SerializeField] private AnimationClip _sceneToMapFadeIn;
     [SerializeField] private AnimationClip _sceneToMapFadeOut;
 
+    [Space]
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _cloudsIn;
+    [SerializeField] private AudioClip _cloudsOut;
+
     public void Hide()
     {
         _mapToSceneFadeOut.SampleAnimation(gameObject, _mapToSceneFadeOut.length);
@@ -20,6 +25,7 @@ public class MapTransition : MonoBehaviour
     {
         _animation.clip = _mapToSceneFadeIn;
 
+        _audioSource.PlayOneShot(_cloudsIn);
         yield return Play();
     }
 
@@ -27,6 +33,7 @@ public class MapTransition : MonoBehaviour
     {
         _animation.clip = _mapToSceneFadeOut;
 
+        _audioSource.PlayOneShot(_cloudsOut);
         yield return Play();
     }
 
@@ -34,6 +41,7 @@ public class MapTransition : MonoBehaviour
     {
         _animation.clip = _sceneToMapFadeIn;
 
+        _audioSource.PlayOneShot(_cloudsIn);
         yield return Play();
     }
 
@@ -41,6 +49,7 @@ public class MapTransition : MonoBehaviour
     {
         _animation.clip = _sceneToMapFadeOut;
 
+        _audioSource.PlayOneShot(_cloudsOut);
         yield return Play();
     }
 

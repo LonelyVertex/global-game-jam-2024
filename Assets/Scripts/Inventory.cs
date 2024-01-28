@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _clickAudioClip;
+
+    [Space]
     [SerializeField] private InventorySO _inventory;
 
     [Space]
@@ -34,6 +38,8 @@ public class Inventory : MonoBehaviour
 
     private void HandleInventoryItemClicked(Item item)
     {
+        _audioSource.PlayOneShot(_clickAudioClip);
+
         if (item.itemProperty.name == GameStateProperties.ItemMap)
         {
             mapClickedEvent?.Invoke();

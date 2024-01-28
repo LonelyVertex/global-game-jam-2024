@@ -76,6 +76,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -798795980, guid: c2a524463041b4a47b6f319483b4eda0, type: 3}
+    - target: {fileID: 4048578509714306020, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
+      propertyPath: _failAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e1899da41e69bc4ab403889550a34a9, type: 3}
+    - target: {fileID: 4048578509714306020, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
+      propertyPath: _successAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: de0ec84a2a422674b83977e070fa41dd, type: 3}
+    - target: {fileID: 4048578509714306020, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
+      propertyPath: _requirementsAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 73e408d568b5259418d983424b4d2eb7, type: 3}
     - target: {fileID: 5269245638856905057, guid: 19e2b83cba74ae74ea7db9d8fb96efa5, type: 3}
       propertyPath: m_Sprite
       value: 

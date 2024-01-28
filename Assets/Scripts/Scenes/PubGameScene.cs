@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PubGameScene : GameScene
@@ -23,10 +24,22 @@ public class PubGameScene : GameScene
                 TransferInnkeeperItem();
                 return;
             default:
-                FailAndShowHintIfNeeded(_miller, GameStateProperties.PersonMillerHappy, _potion);
-                FailAndShowHintIfNeeded(_innkeeper, GameStateProperties.PersonInnkeeperHappy, _money);
+                StartCoroutine(Fail());
                 return;
         }
+    }
+
+    private IEnumerator Fail()
+    {
+        eventSystem.enabled = false;
+
+        FailAndShowHintIfNeeded(_innkeeper, GameStateProperties.PersonInnkeeperHappy, _money);
+
+        yield return new WaitForSeconds(1.0f);
+
+        FailAndShowHintIfNeeded(_miller, GameStateProperties.PersonMillerHappy, _potion);
+
+        eventSystem.enabled = true;
     }
 
     private void TransferMillerItem()

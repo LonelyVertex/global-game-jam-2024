@@ -37,7 +37,7 @@ public class PointerManager : MonoBehaviour
     protected void Update()
     {
         if (
-            // !_eventSystem.enabled ||
+            !_eventSystem.enabled ||
             !_clickAction.WasReleasedThisFrame()
         )
         {

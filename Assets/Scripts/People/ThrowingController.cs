@@ -1,10 +1,10 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 public class ThrowingController : MonoBehaviour
 {
     [SerializeField] private CharacterController _characterController;
+    [SerializeField] private AudioController _audioController;
 
     [Space]
     [SerializeField] private AnimationCurve _throwAnimationCurve;
@@ -24,6 +24,7 @@ public class ThrowingController : MonoBehaviour
     public IEnumerator ThrowItem(Item item, Vector3 target)
     {
         _characterController.Throw();
+        _audioController.PlayThrow();
 
         yield return new WaitForSeconds(CharacterController.ThrowDelay);
 
@@ -49,6 +50,8 @@ public class ThrowingController : MonoBehaviour
     {
         _mockItem.SetItem(item);
         _mockItem.gameObject.SetActive(true);
+
+        _audioController.PlayThrow();
 
         var tr = _mockItem.transform;
         for (var d = 0.0f; d < _duration; d += Time.deltaTime)

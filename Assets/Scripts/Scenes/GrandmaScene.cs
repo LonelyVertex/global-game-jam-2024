@@ -41,8 +41,7 @@ public class GrandmaScene : GameScene
             gameState.IsStateOn(_money.itemProperty.name) ||
             gameState.IsStateOn(_beer.itemProperty.name)
         ) {
-            _grandma.characterController.Fail();
-            _grandma.hintController.Show(_beer);
+            FailAndShowHintIfNeeded(_grandma, "", _beer);
 
             return;
         }

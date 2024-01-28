@@ -9,6 +9,9 @@ public class StrawberryPatchScene : GameScene
     [Header("Bush")]
     [SerializeField] private GameObject _bush;
     [SerializeField] private Item _scythe;
+    [SerializeField] private Animation _bushAnimation;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _audioClip;
 
     [Header("Strawberry")]
     [SerializeField] private ItemClickable _strawberries;
@@ -62,10 +65,14 @@ public class StrawberryPatchScene : GameScene
 
         yield return janek.throwingController.ThrowItem(_scythe, _bush.transform.position);
 
-        _bush.SetActive(false);
-
         gameState.SetState(GameStateProperties.StateBushCut);
         gameState.UnsetState(GameStateProperties.ItemScythe);
+
+        _audioSource.PlayOneShot(_audioClip);
+        _bushAnimation.Play();
+        yield return new WaitForSeconds(_bushAnimation.clip.length);
+
+        _bush.SetActive(false);
 
         eventSystem.enabled = true;
     }

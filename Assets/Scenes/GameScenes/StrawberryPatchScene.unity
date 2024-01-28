@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Janek
       objectReference: {fileID: 0}
+    - target: {fileID: 5828527286016446284, guid: 32dc1b1cd7830fc4484dfb65d1b068fc, type: 3}
+      propertyPath: _requirementsAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: dae27af2fc40ede45874839aa59ae47f, type: 3}
     - target: {fileID: 8285143800043373951, guid: 32dc1b1cd7830fc4484dfb65d1b068fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.86
@@ -472,6 +476,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1536878284}
   - component: {fileID: 1536878285}
+  - component: {fileID: 1536878287}
+  - component: {fileID: 1536878286}
   m_Layer: 0
   m_Name: Props_Bush
   m_TagString: Untagged
@@ -546,6 +552,118 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &1536878286
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536878283}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 4317915384423492467, guid: 3bff60f3cd0ee9d4aa2b023111c2dfdb, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 157a882b36f94f24aba90d48509dd78f, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!111 &1536878287
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536878283}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 6ce142baa5eeedd4284174b54676c3d7, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 6ce142baa5eeedd4284174b54676c3d7, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1592519130
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,6 +804,9 @@ MonoBehaviour:
   _leafClickable: {fileID: 891780224}
   _bush: {fileID: 1536878283}
   _scythe: {fileID: 11400000, guid: 3e1b96d18a5520544abf170f5d595c88, type: 2}
+  _bushAnimation: {fileID: 1536878287}
+  _audioSource: {fileID: 1536878286}
+  _audioClip: {fileID: 8300000, guid: 157a882b36f94f24aba90d48509dd78f, type: 3}
   _strawberries: {fileID: 1883186947}
 --- !u!1001 &1883186943
 PrefabInstance:

@@ -16,7 +16,7 @@ public abstract class GameScene : MonoBehaviour
     protected GameState gameState;
     protected Inventory inventory;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         eventSystem = FindObjectOfType<EventSystem>();
         gameState = FindObjectOfType<GameState>();

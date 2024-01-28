@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HomeScene : GameScene
 {
@@ -9,6 +10,17 @@ public class HomeScene : GameScene
     [SerializeField] private Item _flour;
     [SerializeField] private Item _strawberries;
     [SerializeField] private Item _map;
+
+    [SerializeField] private SceneReference _gameEndScene;
+
+    private MapTransition _mapTransition;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        _mapTransition = FindObjectOfType<MapTransition>();
+    }
 
     protected override void OnEnable()
     {
@@ -54,14 +66,20 @@ public class HomeScene : GameScene
 
         yield return _wife.throwingController.ThrowItem(_pie, janek.target.position);
 
+        janek.audioController.PlaySuccess();
         janek.characterController.Success();
+        _wife.audioController.PlaySuccess();
         _wife.characterController.Success();
 
         gameState.SetState(_pie.itemProperty.name);
 
-        // GAME END!
+        yield return new WaitForSeconds(1.5f);
+
+        yield return _mapTransition.SceneToMapFadeIn();
 
         eventSystem.enabled = true;
+
+        SceneManager.LoadScene(_gameEndScene);
     }
 
     private IEnumerator ShowPie()

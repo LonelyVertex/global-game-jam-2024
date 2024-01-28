@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,7 @@ public class GameFinishedScene : MonoBehaviour
     [SerializeField] private InventoryItem _mapItem;
     [SerializeField] private SceneReference _mainMenu;
     [SerializeField] private EventSystem _eventSystem;
+    [SerializeField] private AudioMixer _audioMixer;
 
     [SerializeField] private Person[] _persons;
 
@@ -23,6 +25,8 @@ public class GameFinishedScene : MonoBehaviour
         yield return _mapTransition.MapToSceneFadeOut();
 
         _eventSystem.enabled = true;
+
+        _audioMixer.FindSnapshot("Map").TransitionTo(0.5f);
 
         foreach (var p in _persons)
         {

@@ -483,6 +483,7 @@ MonoBehaviour:
     sceneAsset: {fileID: 102900000, guid: 4e54204b24c6df548ad7b67c50d67ba4, type: 3}
     scenePath: Assets/Scenes/MainMenu.unity
   _eventSystem: {fileID: 1304078688}
+  _audioMixer: {fileID: 24100000, guid: 3bff60f3cd0ee9d4aa2b023111c2dfdb, type: 2}
   _persons:
   - {fileID: 1616669032}
   - {fileID: 2114545793}

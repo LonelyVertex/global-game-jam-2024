@@ -285,8 +285,8 @@ MonoBehaviour:
   _strawberries: {fileID: 11400000, guid: a97021594a9b57041b88c0a8202d64d5, type: 2}
   _map: {fileID: 11400000, guid: 52ce6a159ebd74949ac1a4da84b26215, type: 2}
   _gameEndScene:
-    sceneAsset: {fileID: 102900000, guid: 4e54204b24c6df548ad7b67c50d67ba4, type: 3}
-    scenePath: Assets/Scenes/MainMenu.unity
+    sceneAsset: {fileID: 102900000, guid: c87dc1c2ff5401f4cade4a936e54bad3, type: 3}
+    scenePath: Assets/Scenes/GameFinished.unity
 --- !u!1 &618034001
 GameObject:
   m_ObjectHideFlags: 0

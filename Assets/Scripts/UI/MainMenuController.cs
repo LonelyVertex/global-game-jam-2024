@@ -10,9 +10,9 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private SceneReference _gameScene;
     [SerializeField] private MapTransition _mapTransition;
 
-    protected void Start()
+    protected IEnumerator Start()
     {
-        _mapTransition.Hide();
+        yield return _mapTransition.MapToSceneFadeOut();
 
         _playButton.onClick.AddListener(HandleOnPlayClick);
     }

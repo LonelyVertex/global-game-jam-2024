@@ -43,6 +43,8 @@ public class StrawberryPatchScene : GameScene
 
     private void HandleStrawberriesClickSuccess(Item strawberry)
     {
+        gameState.SetState(GameStateProperties.StateNoStrawberries);
+
         StartCoroutine(PickItem(strawberry, _strawberries.gameObject));
     }
 
@@ -56,6 +58,10 @@ public class StrawberryPatchScene : GameScene
         if (item.itemProperty.name == GameStateProperties.ItemScythe)
         {
             StartCoroutine(ThrowScytheAndCutBush());
+        }
+        else
+        {
+            FailAndShowHintIfNeeded(janek, GameStateProperties.StateNoStrawberries, _scythe);
         }
     }
 

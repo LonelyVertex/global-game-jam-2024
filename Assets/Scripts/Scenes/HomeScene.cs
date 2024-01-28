@@ -53,16 +53,26 @@ public class HomeScene : GameScene
 
         yield return new WaitForSeconds(0.5f);
 
+        eventSystem.enabled = false;
+
         yield return janek.throwingController.ThrowItem(_water, pos);
         gameState.UnsetState(_water.itemProperty.name);
+
+        eventSystem.enabled = false;
 
         yield return janek.throwingController.ThrowItem(_flour, pos);
         gameState.UnsetState(_flour.itemProperty.name);
 
+        eventSystem.enabled = false;
+
         yield return janek.throwingController.ThrowItem(_strawberries, pos);
         gameState.UnsetState(_strawberries.itemProperty.name);
 
+        eventSystem.enabled = false;
+
         yield return new WaitForSeconds(1.0f);
+
+        eventSystem.enabled = false;
 
         yield return _wife.throwingController.ThrowItem(_pie, janek.target.position);
 
@@ -77,9 +87,9 @@ public class HomeScene : GameScene
 
         yield return _mapTransition.SceneToMapFadeIn();
 
-        eventSystem.enabled = true;
-
         SceneManager.LoadScene(_gameEndScene);
+
+        eventSystem.enabled = true;
     }
 
     private IEnumerator ShowPie()

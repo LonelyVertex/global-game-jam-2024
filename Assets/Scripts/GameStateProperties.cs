@@ -10,6 +10,7 @@ public static class GameStateProperties
     public const string StateWellWithoutFrog = "state_well_without_frog";
     public const string StateBushCut = "state_bush_cut";
     public const string StateWellEmpty = "state_well_empty";
+    public const string StateNoStrawberries = "state_no_strawberries";
 
     public const string PlaceMap = "place_map";
     public const string PlaceHome = "place_home";

@@ -18,6 +18,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] bool catchAnimation;
     [SerializeField] bool failAnimation;
     [SerializeField] bool successAnimation;
+    [SerializeField] bool danceAnimation;
 
     public Transform ObjectPointTransform => objectPoint;
 
@@ -25,6 +26,8 @@ public class CharacterController : MonoBehaviour
     static readonly int CatchTrigger = Animator.StringToHash("Catch");
     static readonly int FailTrigger = Animator.StringToHash("Fail");
     static readonly int SuccessTrigger = Animator.StringToHash("Success");
+    static readonly int DanceTrigger = Animator.StringToHash("Dance");
+    static readonly int DanceNext = Animator.StringToHash("DanceNext");
 
     void Start()
     {
@@ -57,6 +60,11 @@ public class CharacterController : MonoBehaviour
             Success();
             successAnimation = false;
         }
+        
+        if (danceAnimation) {
+            Dance();
+            danceAnimation = false;
+        }
     }
 
     public void Throw()
@@ -84,5 +92,17 @@ public class CharacterController : MonoBehaviour
     {
         headSad.SetActive(false);
         headHappy.SetActive(true);
+    }
+
+    public void Dance()
+    {
+        animator.SetTrigger(DanceTrigger);
+        Invoke(nameof(SwapToHappyFace), HeadSwapDelay);
+        InvokeRepeating(nameof(SetRandomNextDance), 1f, 1f);
+    }
+
+    void SetRandomNextDance()
+    {
+        animator.SetInteger(DanceNext, Random.Range(0, 2));
     }
 }

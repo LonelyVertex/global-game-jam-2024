@@ -20,6 +20,11 @@ public class GrandmaScene : GameScene
         _scytheClickable.clickFailedEvent += HandleScytheClickFailed;
     }
 
+    protected override void HandleBackgroundOnClicked()
+    {
+        FailAndShowHintIfNeeded(janek, "", _scythe);
+    }
+
     protected override void HandleInventoryItemClicked(Item item)
     {
         switch (item.itemProperty.name)

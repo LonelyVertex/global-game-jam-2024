@@ -19,4 +19,9 @@ public class WitchScene : GameScene
             TransferItem(_frog, _witch, GameStateProperties.PersonWitchHappy, _potion)
         );
     }
+
+    protected override void HandleBackgroundOnClicked()
+    {
+        FailAndShowHintIfNeeded(_witch, GameStateProperties.PersonWitchHappy, _frog);
+    }
 }

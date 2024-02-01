@@ -7,6 +7,8 @@ public abstract class GameScene : MonoBehaviour
 {
     public GameStateProperty gameSceneProperty;
 
+    [SerializeField] protected BackgroundClickable backgroundItem;
+
     [Header("Janek")]
     [SerializeField] protected Person janek;
     
@@ -27,13 +29,19 @@ public abstract class GameScene : MonoBehaviour
     {
         inventory.itemClickedEvent += HandleInventoryItemClicked;
         inventory.mapClickedEvent += HandleInventoryMapClicked;
+
+        backgroundItem.onClicked += HandleBackgroundOnClicked;
     }
 
     protected virtual void OnDisable()
     {
         inventory.itemClickedEvent -= HandleInventoryItemClicked;
         inventory.mapClickedEvent -= HandleInventoryMapClicked;
+
+        backgroundItem.onClicked -= HandleBackgroundOnClicked;
     }
+
+    protected abstract void HandleBackgroundOnClicked();
 
     protected virtual void HandleInventoryItemClicked(Item item) { }
 

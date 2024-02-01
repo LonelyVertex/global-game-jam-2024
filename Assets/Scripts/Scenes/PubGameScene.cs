@@ -29,17 +29,27 @@ public class PubGameScene : GameScene
         }
     }
 
+    protected override void HandleBackgroundOnClicked()
+    {
+        StartCoroutine(FailOnly());
+    }
+
     private IEnumerator Fail()
     {
         eventSystem.enabled = false;
 
+        yield return FailOnly();
+
+        eventSystem.enabled = true;
+    }
+
+    private IEnumerator FailOnly()
+    {
         FailAndShowHintIfNeeded(_innkeeper, GameStateProperties.PersonInnkeeperHappy, _money);
 
         yield return new WaitForSeconds(1.0f);
 
         FailAndShowHintIfNeeded(_miller, GameStateProperties.PersonMillerHappy, _potion);
-
-        eventSystem.enabled = true;
     }
 
     private void TransferMillerItem()

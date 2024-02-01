@@ -45,6 +45,27 @@ public class WellScene : GameScene
         }
     }
 
+    protected override void HandleBackgroundOnClicked()
+    {
+        if (gameState.IsStateOn(GameStateProperties.StateWellEmpty))
+        {
+            janek.characterController.Fail();
+
+        }
+        else if (!gameState.IsStateOn(GameStateProperties.StateWellWithoutFrog))
+        {
+            FailAndShowHintIfNeeded(janek, GameStateProperties.StateWellWithoutFrog, _leaf);
+        }
+        else if (!gameState.IsStateOn(GameStateProperties.ItemWater))
+        {
+            FailAndShowHintIfNeeded(janek, "", _bucket);
+        }
+        else
+        {
+            janek.characterController.Fail();
+        }
+    }
+
     private IEnumerator ThrowLeafAndPickUpFrog()
     {
         eventSystem.enabled = false;

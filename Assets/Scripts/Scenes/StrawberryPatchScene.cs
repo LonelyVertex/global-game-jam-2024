@@ -15,6 +15,7 @@ public class StrawberryPatchScene : GameScene
 
     [Header("Strawberry")]
     [SerializeField] private ItemClickable _strawberries;
+    [SerializeField] private Item _strawberriesItem;
 
     protected override void OnEnable()
     {
@@ -34,6 +35,18 @@ public class StrawberryPatchScene : GameScene
 
         _strawberries.clickSuccessfulEvent -= HandleStrawberriesClickSuccess;
         _strawberries.clickFailedEvent -= HandleStrawberriesClickFail;
+    }
+
+    protected override void HandleBackgroundOnClicked()
+    {
+        if (!gameState.IsStateOn(GameStateProperties.StateBushCut))
+        {
+            FailAndShowHintIfNeeded(janek, GameStateProperties.StateBushCut, _scythe);
+        }
+        else if (!gameState.IsStateOn(GameStateProperties.StateNoStrawberries))
+        {
+            FailAndShowHintIfNeeded(janek, GameStateProperties.StateNoStrawberries, _strawberriesItem);
+        }
     }
 
     private void HandleLeafClicked(Item leaf)

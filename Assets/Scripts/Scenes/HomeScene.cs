@@ -45,6 +45,11 @@ public class HomeScene : GameScene
         }
     }
 
+    protected override void HandleBackgroundOnClicked()
+    {
+        _wife.hintController.Show(_water, _flour, _strawberries);
+    }
+
     private IEnumerator GivePie()
     {
         eventSystem.enabled = false;
